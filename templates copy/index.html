@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crime Data Visualization</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <h1>Crime Data Visualization</h1>
+
+    <!-- Heatmap Container -->
+    <div class="chart-container">
+        <h2>Crime Heatmap</h2>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+    </div>
+
+    <!-- Crime by Month Container -->
+    <div class="chart-container">
+        <h2>Crime by Month</h2>
+        <label for="year">Select Year:</label>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        <div id="linecontainer">
+            <div id="line1"></div>
+        </div>
+        <div class="row">
+            <div id="piecontainer">
+                <div id="pie1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Crime by Day of the Week</h2>
+        <label for="crimeType">Select Crime Location:</label>
+        <select id="crimeType">
+            <option value="Apartment">Apartment</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Educational">Educational</option>
+            <option value="House">House</option>
+            <option value="Other">Other</option>
+            <option value="Outside">Outside</option>
+            <option value="Transit">Transit</option>
+        </select>
+        <div id="chart1">
+            <canvas id="chart1Canvas"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Crime by Neighborhood</h2>
+        <label for="neighborhood">Select Neighborhood:</label>
+        <select id="neighborhood"></select>
+        <div id="chart2">
+            <canvas id="chart2Canvas"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Correlation Matrix of Crime Types</h2>
+        <div id="chart3">
+            <svg width="960" height="600"></svg>
+        </div>
+    </div>
+
+    <!-- Include the heatmap, leaflet-heat, and new JS scripts -->
+    <script src="/static/leaflet-heat.js"></script>
+    <script src="/static/heatmap.js"></script>
+    <script src="/static/charts.js"></script>
+    <script src="/static/charts2.js"></script>
+    <script src="/static/charts3.js"></script>
+    <script src="/static/chart1.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
